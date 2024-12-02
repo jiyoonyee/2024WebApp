@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DLab 추천</title>
+</head>
+<body>
+    <h1>실습실 추천 받기</h1>
+    <textarea id="userInput" placeholder="필요한 작업과 프로그램을 입력하세요" rows="4" cols="50"></textarea>
+    <button onclick="getRecommendation()">추천받기</button>
+    <p id="result"></p>
+
+    <script>
+        async function getRecommendation() {
+            const userInput = document.getElementById('userInput').value;
+            const response = await fetch('/recommend', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({description: userInput})
+            });
+            const data = await response.json();
+            document.getElementById('result').innerText = `추천 실습실: ${data.name}, 유사도 점수: ${data.score}`;
+        }
+    </script>
+</body>
+</html>
