@@ -1,12 +1,38 @@
+import { useRef } from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
-const Header = () => {
+const Header = ({ theme, openSideCtrl }) => {
+  const openSideHandler = () => {
+    openSideCtrl();
+  };
+
   return (
     <>
       <Wrap>
-        <HeaderWrap>
-          <img src="../src/assets/img/LogoWhite.png" alt="로고" />
-          <img src="../src/assets/img/hamburgerWhite.png" alt="햄버거 버튼" />
+        <HeaderWrap
+          style={{ borderBottom: ` 1px solid ${theme ? "white" : "black"} ` }}
+        >
+          <Link to={"/"}>
+            <MenuImg
+              src={
+                theme
+                  ? "../src/assets/img/LogoWhite.png"
+                  : "../src/assets/img/LogoBlack.png"
+              }
+              alt="로고"
+            />
+          </Link>
+
+          <MenuImg
+            onClick={openSideHandler}
+            src={
+              theme
+                ? "../src/assets/img/hamburgerWhite.png"
+                : "../src/assets/img/hamburgerBlack.png"
+            }
+            alt="햄버거 버튼"
+          />
         </HeaderWrap>
       </Wrap>
     </>
@@ -26,18 +52,18 @@ const Wrap = styled.div`
 `;
 
 const HeaderWrap = styled.div`
-  width: 90%;
+  width: 95%;
   height: 100%;
-  padding: 0px 50px;
+  padding: 0px 25px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: transparent;
-  border-bottom: 1px solid white;
-  & > img {
-    height: 50%;
-  }
-  & > img:hover {
+`;
+
+const MenuImg = styled.img`
+  height: 40px;
+  &:hover {
     cursor: pointer;
   }
 `;
