@@ -60,6 +60,7 @@ const InputWrap = styled.div`
   justify-content: center;
   align-items: center;
   width: 60%;
+  padding: 0px 10px;
   border-radius: 100px;
   background-color: white;
   padding: 10px;
