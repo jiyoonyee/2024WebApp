@@ -1,11 +1,12 @@
 import styled from "styled-components";
-import CheckSection from "../components/Layouts/CheckSection";
+import CheckSectionMachine from "../components/Atoms/CheckSectionMachine";
+import CheckSectionRoom from "../components/Atoms/CheckSectionRoom";
 
 const CheckPage = () => {
   return (
     <>
       <Wrap>
-        <CheckSection
+        <CheckSectionMachine
           checkTitle={"노트북/태블릿"}
           checkSubTitle={"학번/이름으로"}
           inputHint={"20501 ○○○"}
@@ -19,7 +20,7 @@ const CheckPage = () => {
           ]}
         />
         <Line />
-        <CheckSection
+        <CheckSectionRoom
           checkTitle={"실습실"}
           checkSubTitle={"호실로"}
           inputHint={"308호"}
@@ -32,19 +33,32 @@ const CheckPage = () => {
 
 const Wrap = styled.div`
   padding: 0px 50px;
-  margin-top: calc(100vh - (100vh - 80px));
+  position: relative;
+  top: calc(100vh - (100vh - 80px));
   height: calc(100vh - 80px);
   background-color: #fefefe;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 20px;
+
+  @media screen and (max-width: 1200px) {
+    & {
+      flex-direction: column;
+    }
+  }
 `;
 
 const Line = styled.div`
   width: 1px;
   height: 90%;
   background-color: black;
+  @media screen and (max-width: 1200px) {
+    & {
+      width: 90%;
+      height: 1px;
+    }
+  }
 `;
 
 export default CheckPage;

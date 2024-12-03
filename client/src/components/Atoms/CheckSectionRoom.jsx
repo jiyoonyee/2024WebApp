@@ -1,10 +1,11 @@
 import styled from "styled-components";
 
-const CheckSection = ({ checkTitle, checkSubTitle, inputHint, itemList }) => {
-  itemList.map((el) => {
-    console.log(el);
-  });
-
+const CheckSectionRoom = ({
+  checkTitle,
+  checkSubTitle,
+  inputHint,
+  itemList,
+}) => {
   return (
     <>
       <Wrap>
@@ -60,11 +61,10 @@ const InputWrap = styled.div`
   justify-content: center;
   align-items: center;
   width: 60%;
-  padding: 0px 10px;
+  padding: 10px 15px;
   border-radius: 100px;
   background-color: white;
-  padding: 10px;
-  border: 1px solid black;
+  box-shadow: 0px 0px 10px 3px #b9b9b9;
 `;
 
 const CheckInput = styled.input`
@@ -106,4 +106,4 @@ const ItemNameListHeaderName = styled.div`
   border-right: 1px solid black;
 `;
 
-export default CheckSection;
+export default CheckSectionRoom;

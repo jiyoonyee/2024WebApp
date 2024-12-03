@@ -11,6 +11,7 @@ const Header = ({ theme, openSideCtrl }) => {
     <>
       <Wrap>
         <HeaderWrap
+          onClick={openSideHandler}
           style={{ borderBottom: ` 1px solid ${theme ? "white" : "black"} ` }}
         >
           <Link to={"/"}>

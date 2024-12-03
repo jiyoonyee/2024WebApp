@@ -32,16 +32,16 @@ const SideMenu = ({ openSide, openSideCtrl }) => {
           />
         </RemoveButton>
         <MenuList>
-          <Link>
+          <Link onClick={openSideHandler}>
             <MenuItem>실습실 신청</MenuItem>
           </Link>
-          <Link>
+          <Link onClick={openSideHandler}>
             <MenuItem>AI 기반 실습실 추천</MenuItem>
           </Link>
-          <Link>
+          <Link onClick={openSideHandler}>
             <MenuItem>노트북/태블릿 대여</MenuItem>
           </Link>
-          <Link to={"/check"}>
+          <Link to={"/check"} onClick={openSideHandler}>
             <MenuItem>신청조회</MenuItem>
           </Link>
         </MenuList>
