@@ -9,7 +9,7 @@ const Header = ({ theme, openSideCtrl }) => {
 
   return (
     <>
-      <Wrap>
+      <Wrap style={{ backgroundColor: ` ${theme ? "transparent" : "white"} ` }}>
         <HeaderWrap
           onClick={openSideHandler}
           style={{ borderBottom: ` 1px solid ${theme ? "white" : "black"} ` }}
